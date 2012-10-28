@@ -43,11 +43,8 @@
  * NOTE: If you change these, also change the error_reporting() code below
  */
 	$env = getenv('CI_ENV');
-	$default_env = 'development';
-	if ($env === FALSE)
-	{
-		$env = $default_env;
-	}
+	$env = ( $env === FALSE) ? 'development' : $env;
+
 	define('ENVIRONMENT', $env);
 	
 /*
